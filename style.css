@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap');
+/* DEBUT  SIDEBAR*/
+*
+{
+    margin:0 ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Zilla Slab', serif;
+
+}
+
+body
+{
+  /*background-image: url(acceuil.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background:white;
+  min-height: 200vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+  line-height: 1.6;
+  background-image: url(acceuil.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh;*/
+
+}
+
+.navigation
+{
+  
+  position:fixed;
+  top: 120px;
+  left: 20px;
+  bottom: 20px;
+  width: 70px;
+  border-radius: 10px;
+  box-sizing: initial;
+  border-left: 5px solid #a1ceee;
+  background-color: #a1ceee;
+  transition: width 0.6s;
+  overflow-x: hidden;
+  box-shadow: 3px 6px 17px 6px #a1ceee;
+
+}
+
+.navigation.active
+{
+  width: 300px;
+}
+.navigation ul
+{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  padding-left: 5px;
+  padding-top: 40px;
+}
+.navigation ul li
+{
+  position: relative;
+  list-style: none;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.navigation ul li.active
+{
+  background: white;
+
+}
+.navigation ul li b:nth-child(1)
+{
+  position: absolute;
+  top: -20px;
+  height: 20px;
+  width: 100%;
+  background: white;
+  display: none;
+}
+.navigation ul li b:nth-child(1)::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 20px;
+  background: #a1ceee;
+}
+.navigation ul li b:nth-child(2)
+{
+  position: absolute;
+  bottom: -20px;
+  height: 20px;
+  width: 100%;
+  background: white;
+  display: none;
+}
+.navigation ul li b:nth-child(2)::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 20px;
+  background: #a1ceee;
+}
+
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2)
+{
+  display: block;
+  
+}
+.navigation ul li a
+{
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: white;
+
+
+}
+.navigation ul li.active a
+{
+ color:rgb(21, 99, 187);
+
+}
+.navigation ul li a .icon
+{
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+  color: rgb(21, 99, 187);
+
+}
+.navigation ul li a .icon ion-icon
+{
+  font-size: 1.5em;
+  
+}
+.navigation ul li a .title
+{
+  position: relative;
+  display: block;
+  padding-left: 10px;
+  height: 60px;
+  line-height: 60px;
+  white-space: normal;
+
+
+}
+.navigation ul li a .title img
+{
+  position: relative;
+  height: 170px;
+  top: 40px;
+  
+}
+
+/* calendar */
+
+button {
+  width: 75px;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px gray;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+#header {
+  padding: 10px;
+  color: #d36c6c;
+  font-size: 26px;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+#header button {
+  background-color:#92a1d1;
+}
+#container {
+    border: solid;
+  width: 40px;
+  margin-left: 330px;
+  margin-top: 52px;
+}
+#weekdays {
+  width: 100%;
+  display: flex;
+  color: #247BA0;
+}
+#weekdays div {
+  width: 100px;
+  padding: 10px;
+}
+#calendar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.day {
+  width: 100px;
+  padding: 10px;
+  height: 100px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 5px;
+  box-shadow: 0px 0px 3px #CBD4C2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.day:hover {
+  background-color: #e8faed;
+}
+
+.day + #currentDay {
+  background-color:#e8f4fa;
+}
+.event {
+  font-size: 10px;
+  padding: 3px;
+  background-color: #58bae4;
+  color: white;
+  border-radius: 5px;
+  max-height: 55px;
+  overflow: hidden;
+}
+.padding {
+  cursor: default !important;
+  background-color: #FFFCFF !important;
+  box-shadow: none !important;
+}
+#newEventModal, #deleteEventModal {
+  display: none;
+  z-index: 20;
+  padding: 25px;
+  background-color: #e8f4fa;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 350px;
+  top: 100px;
+  left: calc(50% - 175px);
+  position: absolute;
+  font-family: sans-serif;
+}
+#eventTitleInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+}
+#eventTitleInput.error {
+  border: 2px solid red;
+}
+#cancelButton, #deleteButton {
+  background-color: #d36c6c;
+}
+#saveButton, #closeButton {
+  background-color: #92a1d1;
+}
+#eventText {
+  font-size: 14px;
+}
+#modalBackDrop {
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.day + #currentDay {
+background-color:#e8f4fa;
+}
+.event {
+font-size: 10px;
+padding: 3px;
+background-color: #58bae4;
+color: white;
+border-radius: 5px;
+max-height: 55px;
+overflow: hidden;
+}
+.padding {
+cursor: default !important;
+background-color: #FFFCFF !important;
+box-shadow: none !important;
+}
+#newEventModal, #deleteEventModal {
+display: none;
+z-index: 20;
+padding: 25px;
+background-color: #e8f4fa;
+box-shadow: 0px 0px 3px black;
+border-radius: 5px;
+width: 350px;
+top: 100px;
+left: calc(50% - 175px);
+position: absolute;
+font-family: sans-serif;
+}
+#eventTitleInput {
+padding: 10px;
+width: 100%;
+box-sizing: border-box;
+margin-bottom: 25px;
+border-radius: 3px;
+outline: none;
+border: none;
+box-shadow: 0px 0px 3px gray;
+}
+#eventTitleInput.error {
+border: 2px solid red;
+}
+#cancelButton, #deleteButton {
+background-color: #d36c6c;
+}
+#saveButton, #closeButton {
+background-color: #92a1d1;
+}
+#eventText {
+font-size: 14px;
+}
+#modalBackDrop {
+display: none;
+top: 0px;
+left: 0px;
+z-index: 10;
+width: 100vw;
+height: 100vh;
+position: absolute;
+background-color: rgba(0,0,0,0.8);
+}
